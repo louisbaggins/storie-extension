@@ -1,0 +1,20 @@
+{
+    "name": "Stories Beholder",
+    "version": "1.0",
+    "description": "Download media of instagram stories",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["/src/background/background.js"],
+        "persistent": false
+      },
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "run_at": "document_end",
+        "matches": ["https://www.instagram.com/stories/*"],
+        "js": ["./src/content/content.js"]
+      }
+    ]
+}
